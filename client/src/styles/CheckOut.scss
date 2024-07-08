@@ -1,0 +1,178 @@
+@import "variables";
+@import "mixin";
+.checkout-container {
+    font-family: $poppins-font;
+    max-width: 1140px;
+    margin: 200px auto 100px;
+    padding: 0 20px;
+}
+
+.checkout-title {
+    h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+        letter-spacing: 0.8px;
+    }
+}
+
+.checkout-info-container {
+    @include flex(row, space-between, flex-start);
+}
+
+.checkout-info {
+    max-width: 528px;
+    width: 100%;
+    margin-right: 20px;
+    p {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    form {
+        .name-info,
+        .city-info,
+        .district-info,
+        .ward-info,
+        .address-info {
+            margin-bottom: 15px;
+            label {
+                display: block;
+                font-size: 15px;
+                padding: 1px 4px;
+            }
+            input {
+                width: 100%;
+                padding: 8px 4px;
+                outline: none;
+                border: 1px solid #c2c5e1;
+                font-size: 16px;
+                &:hover {
+                    border: 1px solid $primary-color;
+                }
+                &:focus {
+                    border-color: $primary-color;
+                }
+            }
+        }
+        .city-info,
+        .district-info,
+        .ward-info {
+            select {
+                width: 100%;
+                padding: 9px 0;
+                font-size: 15px;
+                outline: none;
+                border: 1px solid #c2c5e1;
+                cursor: pointer;
+                &:hover {
+                    border: 1px solid $primary-color;
+                }
+                option {
+                    cursor: pointer;
+                }
+            }
+        }
+        .address-info {
+            margin-bottom: 25px;
+        }
+
+        .name-error,
+        .city-error,
+        .district-error,
+        .ward-error,
+        .address-error {
+            font-size: 13px;
+            color: red;
+        }
+        button {
+            width: 100%;
+            padding: 13px 0;
+            text-transform: uppercase;
+            background-color: $primary-color;
+            color: white;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            border-radius: 5px;
+            &:hover {
+                background-color: $hover-color;
+            }
+            &:active {
+                background-color: $primary-color;
+            }
+        }
+    }
+}
+
+.price-info-container {
+    max-width: 528px;
+    width: 100%;
+    height: fit-content;
+    padding: 32px;
+    background-color: $primary-color;
+    color: white;
+    border-radius: 15px;
+    font-size: 14px;
+    .subtotal {
+        width: 100%;
+        @include flex(row, space-between, flex-start);
+        margin-bottom: 5px;
+    }
+    .shipping {
+        width: 100%;
+        @include flex(row, space-between, flex-start);
+        margin-bottom: 40px;
+    }
+    .order-total {
+        width: 100%;
+        @include flex(row, space-between, flex-start);
+        font-size: 17px;
+        font-weight: bold;
+        letter-spacing: 0.8px;
+    }
+}
+
+.login-to-continue {
+    min-height: 73vh;
+    text-align: center;
+    margin-top: 200px;
+    font-family: $poppins-font;
+    p {
+        font-size: 30px;
+        letter-spacing: 0.8px;
+        margin-bottom: 10px;
+    }
+    .login-link {
+        color: $primary-color;
+        font-size: 20px;
+        text-decoration: underline;
+        &:hover {
+            color: $hover-color;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .checkout {
+        margin-top: 150px;
+    }
+    .checkout-title {
+        text-align: center;
+    }
+
+    .checkout-info-container {
+        @include flex(column, flex-start, center);
+    }
+    .checkout-info {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    .login-to-continue {
+        margin: 150px 5px 0;
+        p {
+            font-size: 25px;
+        }
+        .login-link {
+            font-size: 18px;
+        }
+    }
+}

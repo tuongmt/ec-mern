@@ -1,0 +1,60 @@
+@import "_variables";
+@import "_mixin";
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    font-family: $poppins-font;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    @include transition;
+}
+.sidebar-container {
+    width: 180px;
+    min-height: 1200px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: $second-color;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+
+    img {
+        width: 100%;
+        color: #333;
+        text-align: center;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+    a {
+        width: 100%;
+        text-decoration: none;
+        cursor: pointer;
+        color: white;
+        div {      
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            &:hover {
+                background-color: $primary-color;
+            }
+            &.active {
+                background-color: $primary-color;
+            }
+        }
+        i {
+            margin-right: 10px;
+        }
+    }
+}

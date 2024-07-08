@@ -1,0 +1,9 @@
+@import "_variables";
+@import "_mixin";
+
+.dashboard {
+    font-family: $roboto-font;
+    margin-left: 180px;
+    margin-top: 60px;
+    padding: 10px;
+}

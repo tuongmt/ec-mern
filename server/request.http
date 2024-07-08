@@ -1,0 +1,84 @@
+POST http://localhost:5000/api/v1/signup
+Content-Type: application/json
+
+{
+    "username": "Tuong",
+    "email": "tuantuong@gmail.com",
+    "password": "12345678",
+}
+
+###
+
+GET http://localhost:5000/api/v1/all-users
+
+###
+
+POST https://watch-api-project.vercel.app/api/v2/login
+Content-Type: application/json
+
+{
+    "email": "a45777777777sd@gmail.com",
+    "password": "12345678"
+}
+
+###
+
+POST http://localhost:5000/api/v1/login-admin
+Content-Type: application/json
+
+{
+    "email": "tuong@gmail.com",
+    "password": "12345678"
+}
+
+###
+
+POST http://localhost:5000/api/v2/products
+Content-Type: application/json
+
+{
+    "images": "hihi",
+    "name": "Hihi",
+    "price": 123,
+    "totalAmount": "",
+    "description": "hehe",
+    "category": "foods",
+    "quality": ""
+}
+###
+
+PUT http://localhost:5000/api/v1/products/667ec215c8ae3ecde911863b
+Content-Type: application/json
+
+{
+    "images": "https://m.media-amazon.com/images/I/61MliEjiBaL._AC_UX466_.jpg",
+    "name": "Haha",
+    "price": 321,
+    "totalAmount": 150,
+    "description": "huhu",
+    "category": "beverages",
+    "quality": "most popular"
+}
+
+###
+GET http://localhost:5000/api/v1/all-users
+
+###
+
+POST http://localhost:5000/api/v1/forgot-password
+Content-Type: application/json
+
+{
+    "email": "tuantuong2512@gmail.com",
+    "password": "12345678"
+}
+
+###
+
+POST http://localhost:5000/api/v1/send-email
+Content-Type: application/json
+
+{
+    "email": "tuantuong10@gmail.com",
+    "token": "alo"
+}

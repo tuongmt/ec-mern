@@ -1,0 +1,141 @@
+@import "_variables";
+@import "_mixin";
+
+.signup {
+    font-family: $roboto-font;
+    height: 100vh;
+    @include flex(row, center, center);
+    padding-top: 200px;
+    .signup-form {
+        height: fit-content;
+        width: 555px;
+        padding: 44px;
+        box-shadow: 0 0 25px 10px #eeeeee;
+        .signup-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 7px;
+            text-align: center;
+        }
+        .signup-subtitle {
+            font-size: 17px;
+            color: #9096b2;
+            text-align: center;
+            margin-bottom: 22px;
+        }
+        .username-container,
+        .email-container {
+            margin-bottom: 23px;
+            width: 100%;
+            .username-input {
+                padding: 15px 13px;
+                width: 100%;
+                border-radius: 5px;
+            }
+            .email-input {
+                padding: 15px 13px;
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+        .password-container {
+            margin-bottom: 10px;
+            width: 100%;
+            .password-input {
+                padding: 15px 13px;
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+        .username-input,
+        .email-input,
+        .password-input {
+            outline: none;
+            border-radius: 2px;
+            border: 1px solid #c2c5e1;
+            background: #fff;
+            font-size: 17px;
+            &::placeholder {
+                font-size: 17px;
+                color: #9096b2;
+            }
+            &:hover {
+                border-color: $primary-color;
+            }
+            &:focus {
+                border-color: $primary-color;
+            }
+        }
+        .username-error,
+        .email-error,
+        .password-error {
+            text-align: left;
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+        .show-password-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 23px;
+            width: 100%;
+            color: #9096b2;
+            .checkbox-show-password {
+                cursor: pointer;
+                margin-right: 5px;
+            }
+            .checkbox-show-password-label {
+                cursor: pointer;
+            }
+        }
+        .signup-rejected {
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .signup-pending {
+            color: #9096b2;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .signup-btn {
+            border-radius: 5px;
+            font-size: 17px;
+            width: 100%;
+            padding: 13px 0;
+            background-color: $primary-color;
+            border: 2px solid transparent;
+            color: white;
+            @include transition;
+            cursor: pointer;
+            margin-bottom: 28px;
+            &:hover {
+                background-color: $hover-color;
+            }
+        }
+        .options {
+            font-size: 17px;
+            color: #9096b2;
+            text-align: center;
+        }
+        .link-to-login {
+            text-decoration: none;
+            color: $primary-color;
+            margin-left: 5px;
+            &:hover {
+                color: $hover-color;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .signup {
+        padding-top: 100px;
+        margin-bottom: 100px;
+        .signup-form {
+            padding: 15px;
+        }
+    }
+}

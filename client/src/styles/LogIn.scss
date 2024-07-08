@@ -1,0 +1,233 @@
+@import "_variables";
+@import "_mixin";
+
+.login {
+    font-family: $roboto-font;
+    height: 100vh;
+    @include flex(row, center, center);
+    padding-top: 200px;
+    .login-form {
+        height: fit-content;
+        width: 555px;
+        padding: 44px;
+        @include flex(column, flex-start, center);
+        box-shadow: 0 0 25px 10px #f8f8f8;
+        .login-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+        .login-subtitle {
+            font-size: 17px;
+            color: #9096b2;
+            text-align: center;
+            margin-bottom: 22px;
+        }
+        .email-container {
+            margin-bottom: 23px;
+            width: 100%;
+            .email-input {
+                padding: 15px 13px;
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+        .password-container {
+            margin-bottom: 10px;
+            width: 100%;
+            .password-input {
+                padding: 15px 13px;
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+        .email-input,
+        .password-input {
+            outline: none;
+            border-radius: 2px;
+            border: 1px solid #c2c5e1;
+            background: #fff;
+            font-size: 17px;
+            &::placeholder {
+                font-size: 17px;
+                color: #9096b2;
+            }
+            &:hover {
+                border-color: $primary-color;
+            }
+            &:focus {
+                border-color: $primary-color;
+            }
+        }
+        .email-error,
+        .password-error {
+            text-align: left;
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+        .show-forgot-password {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 23px;
+            width: 100%;
+            color: #9096b2;
+            .show-password-container {
+                display: flex;
+                align-items: center;
+                .checkbox-show-password {
+                    cursor: pointer;
+                    margin-right: 5px;
+                }
+                .checkbox-show-password-label {
+                    cursor: pointer;
+                }
+            }
+            .forgot-password-btn {
+                text-decoration: none;
+                color: #9096b2;
+                border: none;
+                background-color: transparent;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        }
+        .login-rejected {
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-pending {
+            color: #9096b2;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .login-btn {
+            border-radius: 5px;
+            font-size: 17px;
+            width: 100%;
+            padding: 13px 0;
+            background-color: $primary-color;
+            border: 2px solid transparent;
+            color: white;
+            @include transition;
+            cursor: pointer;
+            margin-bottom: 28px;
+            &:hover {
+                background-color: $hover-color;
+            }
+        }
+        .link-to-signup {
+            text-decoration: none;
+            color: $primary-color;
+            margin-left: 5px;
+            &:hover {
+                color: $hover-color;
+            }
+        }
+    }
+    .modal {
+        display: none;
+    }
+    .modal-container {
+        padding: 20px;
+        border: 1px solid #9096b2;
+        border-radius: 5px;
+        background-color: white;
+        position: relative;
+        .close-modal-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            .close-img {
+                width: 18px;
+                opacity: 0.6;
+                @include transition;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        .modal-title {
+            margin-bottom: 10px;
+        }
+        .modal-subtitle {
+            color: #9096b2;
+            margin-bottom: 20px;
+        }
+        .modal-email-input {
+            padding: 10px;
+            font-size: 17px;
+            display: block;
+            width: 100%;
+            outline: none;
+            border: 1px solid #9096b2;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            &::placeholder {
+                color: #9096b2;
+            }
+            &:hover {
+                border-color: $primary-color;
+            }
+            &:focus {
+                border-color: $primary-color;
+            }
+        }
+        .email-rejected {
+            color: red;
+            margin-bottom: 20px;
+        }
+        .email-fulfilled {
+            color: rgb(200, 153, 121);
+            margin-bottom: 20px;
+        }
+        .email-pending {
+            color: #9096b2;
+            margin-bottom: 20px;
+        }
+        .search-btn {
+            background-color: $primary-color;
+            color: white;
+            padding: 5px 20px;
+            font-size: 17px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            @include transition;
+            &:hover {
+                background-color: $hover-color;
+            }
+            &:active {
+                background-color: $primary-color;
+            }
+        }
+    }
+    .show-modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgb(150, 150, 150);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .login {
+        padding-top: 100px;
+        margin-bottom: 100px;
+        .login-form {
+            padding: 15px;
+        }
+    }
+}
